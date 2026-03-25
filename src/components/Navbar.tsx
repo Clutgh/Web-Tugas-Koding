@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 import { useState, useEffect } from "react";
 import { Moon, Sun, Menu, X, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
+=======
+import { useState, useEffect } from 'react';
+import { Moon, Sun, Menu, X } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { motion, AnimatePresence } from 'framer-motion';
+>>>>>>> 97d55f346334a7b3c1119310f53cf394aa05b515
 
 interface NavbarProps {
   isDark: boolean;
@@ -11,13 +18,17 @@ interface NavbarProps {
 export default function Navbar({ isDark, toggleTheme }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+<<<<<<< HEAD
   const [lang, setLang] = useState("id");
   const [openLang, setOpenLang] = useState(false);
+=======
+>>>>>>> 97d55f346334a7b3c1119310f53cf394aa05b515
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
+<<<<<<< HEAD
 
     const handleClickOutside = () => {
       setOpenLang(false);
@@ -69,11 +80,24 @@ export default function Navbar({ isDark, toggleTheme }: NavbarProps) {
     { href: "#projects" },
     { href: "#certificates" },
     { href: "#contact" },
+=======
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navItems = [
+    { label: 'Home', href: '#home' },
+    { label: 'About', href: '#about' },
+    { label: 'Skills', href: '#skills' },
+    { label: 'Projects', href: '#projects' },
+    { label: 'Contact', href: '#contact' },
+>>>>>>> 97d55f346334a7b3c1119310f53cf394aa05b515
   ];
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
+<<<<<<< HEAD
       const offset = 80;
       const top = element.getBoundingClientRect().top + window.scrollY - offset;
 
@@ -81,6 +105,9 @@ export default function Navbar({ isDark, toggleTheme }: NavbarProps) {
         top,
         behavior: "smooth",
       });
+=======
+      element.scrollIntoView({ behavior: 'smooth' });
+>>>>>>> 97d55f346334a7b3c1119310f53cf394aa05b515
     }
     setIsMobileMenuOpen(false);
   };
@@ -90,21 +117,33 @@ export default function Navbar({ isDark, toggleTheme }: NavbarProps) {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+<<<<<<< HEAD
         isScrolled ? "glass-strong shadow-card" : "bg-transparent"
+=======
+        isScrolled ? 'glass-strong shadow-card' : 'bg-transparent'
+>>>>>>> 97d55f346334a7b3c1119310f53cf394aa05b515
       }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
+<<<<<<< HEAD
           {/* LOGO */}
+=======
+>>>>>>> 97d55f346334a7b3c1119310f53cf394aa05b515
           <motion.a
             href="#home"
             onClick={(e) => {
               e.preventDefault();
+<<<<<<< HEAD
               scrollToSection("#home");
+=======
+              scrollToSection('#home');
+>>>>>>> 97d55f346334a7b3c1119310f53cf394aa05b515
             }}
             className="font-display text-xl md:text-2xl font-bold text-gradient cursor-pointer"
             whileHover={{ scale: 1.05 }}
           >
+<<<<<<< HEAD
             Wendry Portofolio
           </motion.a>
 
@@ -114,6 +153,16 @@ export default function Navbar({ isDark, toggleTheme }: NavbarProps) {
             {navItems.map((item, index) => (
               <motion.a
                 key={item.href}
+=======
+            &lt;Dev /&gt;
+          </motion.a>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-8">
+            {navItems.map((item) => (
+              <motion.a
+                key={item.label}
+>>>>>>> 97d55f346334a7b3c1119310f53cf394aa05b515
                 href={item.href}
                 onClick={(e) => {
                   e.preventDefault();
@@ -122,6 +171,7 @@ export default function Navbar({ isDark, toggleTheme }: NavbarProps) {
                 className="text-muted-foreground hover:text-foreground transition-colors font-medium cursor-pointer"
                 whileHover={{ y: -2 }}
               >
+<<<<<<< HEAD
                 {navText[lang][index]}
               </motion.a>
             ))}
@@ -177,6 +227,17 @@ export default function Navbar({ isDark, toggleTheme }: NavbarProps) {
 
             {/* THEME */}
             <Button variant="ghost" size="icon" onClick={toggleTheme}>
+=======
+                {item.label}
+              </motion.a>
+            ))}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleTheme}
+              className="rounded-full"
+            >
+>>>>>>> 97d55f346334a7b3c1119310f53cf394aa05b515
               <AnimatePresence mode="wait">
                 {isDark ? (
                   <motion.div
@@ -201,33 +262,59 @@ export default function Navbar({ isDark, toggleTheme }: NavbarProps) {
             </Button>
           </div>
 
+<<<<<<< HEAD
           {/* MOBILE */}
           <div className="flex items-center gap-2 md:hidden">
             <Button variant="ghost" size="icon" onClick={toggleTheme}>
               {isDark ? <Sun /> : <Moon />}
             </Button>
 
+=======
+          {/* Mobile Menu Button */}
+          <div className="flex items-center gap-2 md:hidden">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleTheme}
+              className="rounded-full"
+            >
+              {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+            </Button>
+>>>>>>> 97d55f346334a7b3c1119310f53cf394aa05b515
             <Button
               variant="ghost"
               size="icon"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
+<<<<<<< HEAD
               {isMobileMenuOpen ? <X /> : <Menu />}
+=======
+              {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+>>>>>>> 97d55f346334a7b3c1119310f53cf394aa05b515
             </Button>
           </div>
         </div>
       </div>
 
+<<<<<<< HEAD
       {/* MOBILE MENU */}
+=======
+      {/* Mobile Menu */}
+>>>>>>> 97d55f346334a7b3c1119310f53cf394aa05b515
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
+<<<<<<< HEAD
             animate={{ opacity: 1, height: "auto" }}
+=======
+            animate={{ opacity: 1, height: 'auto' }}
+>>>>>>> 97d55f346334a7b3c1119310f53cf394aa05b515
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden glass-strong border-t border-border"
           >
             <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
+<<<<<<< HEAD
               {/* LANGUAGE MOBILE */}
               <div className="flex gap-2 flex-wrap">
                 {["id", "en", "jp", "es", "fr"].map((l) => (
@@ -244,6 +331,11 @@ export default function Navbar({ isDark, toggleTheme }: NavbarProps) {
               {navItems.map((item, index) => (
                 <a
                   key={item.href}
+=======
+              {navItems.map((item) => (
+                <a
+                  key={item.label}
+>>>>>>> 97d55f346334a7b3c1119310f53cf394aa05b515
                   href={item.href}
                   onClick={(e) => {
                     e.preventDefault();
@@ -251,7 +343,11 @@ export default function Navbar({ isDark, toggleTheme }: NavbarProps) {
                   }}
                   className="text-muted-foreground hover:text-foreground transition-colors font-medium py-2"
                 >
+<<<<<<< HEAD
                   {navText[lang][index]}
+=======
+                  {item.label}
+>>>>>>> 97d55f346334a7b3c1119310f53cf394aa05b515
                 </a>
               ))}
             </div>
