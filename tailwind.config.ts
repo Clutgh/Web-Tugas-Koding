@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-<<<<<<< HEAD
 import animate from "tailwindcss-animate";
 
 export default {
@@ -10,12 +9,6 @@ export default {
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
   ],
-=======
-
-export default {
-  darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
->>>>>>> 97d55f346334a7b3c1119310f53cf394aa05b515
   prefix: "",
   theme: {
     container: {
@@ -27,13 +20,8 @@ export default {
     },
     extend: {
       fontFamily: {
-<<<<<<< HEAD
         sans: ["Inter", "sans-serif"],
         display: ["Space Grotesk", "sans-serif"],
-=======
-        sans: ['Inter', 'sans-serif'],
-        display: ['Space Grotesk', 'sans-serif'],
->>>>>>> 97d55f346334a7b3c1119310f53cf394aa05b515
       },
       colors: {
         border: "hsl(var(--border))",
@@ -116,9 +104,5 @@ export default {
       },
     },
   },
-<<<<<<< HEAD
   plugins: [animate],
-=======
-  plugins: [require("tailwindcss-animate")],
->>>>>>> 97d55f346334a7b3c1119310f53cf394aa05b515
 } satisfies Config;
